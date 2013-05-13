@@ -70,56 +70,84 @@ classdef BP_MLP
             end
         end
         
-            function saida = atualizar(obj,entradas)
-                % Verificando a quantidade de entradas
-                try
-                    obj.xi(1:obj.ni-1) = entradas;
-                catch e
-                    throw(e);
-                end
-                % Ativação da primeira camada
-                v = ((obj.xi')*obj.w{1})';
-                
-                % Ativação das camadas ocultas
-                for i=1:1:(obj.final-1)
-                    obj.a{i}(1:obj.nh(i)) = tanh(v);
-                    v = ((obj.a{i}')*obj.w{i+1})';
-                end
-                
-                % Ativa da camada de saída
-                obj.a{obj.final} = tanh(v);
-                
-                saida = obj.a{obj.final};
+        function saida = atualizar(obj,entradas)
+            % Verificando a quantidade de entradas
+            try
+                obj.xi(1:obj.ni-1) = entradas(1:obj.ni-1,1);
+            catch e
+                throw(e);
             end
-            
-            function erro_quad = backpropagation(obj, desejado, eta, alpha)
-                % Verificando a quantidade de saidas
-                try
-                    obj.erro = desejado - obj.a{obj.final};
-                catch e
-                    throw(e);
+            % Ativação da primeira camada
+            v = ((obj.xi')*obj.w{1})';
+
+            % Ativação das camadas ocultas
+            for i=1:1:(obj.final-1)
+                obj.a{i}(1:obj.nh(i)) = tanh(v);
+                v = ((obj.a{i}')*obj.w{i+1})';
+            end
+
+            % Ativa da camada de saída
+            obj.a{obj.final} = tanh(v);
+
+            saida = obj.a{obj.final};
+        end
+
+        function erro_quad = backpropagation(obj, desejado, eta, alpha)
+            % Verificando a quantidade de saidas
+            try
+                obj.erro = desejado - obj.a{obj.final};
+            catch e
+                throw(e);
+            end
+
+            obj.delta{obj.final} = obj.dtanh(obj.a{obj.final}).*obj.erro;
+
+            for i = obj.final:-1:2
+                obj.ajuste{i} = eta*((obj.delta{i}*obj.a{i-1}')') + alpha*obj.c{i};
+                obj.w{i} = obj.w{i} + obj.ajuste{i};
+                obj.c{i} = obj.ajuste{i};
+                somatorio = (obj.delta{i}'*(obj.w{i}(1:obj.nh(i)))')';
+                obj.delta{i-1} = obj.dtanh(obj.a{i-1}(1:obj.nh(i-1))).*somatorio;
+            end
+
+            % Fazendo correções nas sinapses da camada de entrada
+            obj.ajuste{1} = eta*((obj.delta{1}*obj.xi')') + alpha*obj.c{1};
+            obj.w{1} = obj.w{1} + obj.ajuste{1};
+            obj.c{1} = obj.ajuste{1};
+
+            obj.E = 0.5*(obj.erro'*obj.erro);
+
+            erro_quad = obj.E;
+        end
+        
+        function treinar(obj, padroes, iteracoes, eta, alpha)
+            [n_pad, n_io] = size(padroes);
+            J = zeros(iteracoes,1);
+            for i = 1:1:iteracoes
+                temp = padroes(randperm(n_pad),:);
+                padroes = temp;
+                erro_quad = 0.0;
+                for p = 1:1:n_pad
+                    entrada = padroes(p,1:(obj.ni-1));
+                    desejado = padroes(p,obj.ni:n_io);
+                    obj.atualizar(entrada);
+                    erro_quad = obj.backpropagation(desejado, eta, alpha);
+                    p;
+                    J(p) = erro_quad;
                 end
-                
-                obj.delta{obj.final} = obj.dtanh(obj.a{obj.final}).*obj.erro;
-                
-                for i = obj.final:-1:2
-                    obj.ajuste{i} = eta*((obj.delta{i}*obj.a{i-1}')') + alpha*obj.c{i};
-                    obj.w{i} = obj.w{i} + obj.ajuste{i};
-                    obj.c{i} = obj.ajuste{i};
-                    somatorio = (obj.delta{i}'*(obj.w{i}(1:obj.nh(i)))')';
-                    obj.delta{i-1} = obj.dtanh(obj.a{i-1}(1:obj.nh(i-1))).*somatorio;
-                end
-                
-                % Fazendo correções nas sinapses da camada de entrada
-                obj.ajuste{1} = eta*((obj.delta{1}*obj.xi')') + alpha*obj.c{1};
-                obj.w{1} = obj.w{1} + obj.ajuste{1};
-                obj.c{1} = obj.ajuste{1};
-                
-                obj.E = 0.5*(obj.erro'*obj.erro);
-                
-                erro_quad = obj.E;
+            end
+            plot(1:1:iteracoes,J);
+        end
+        
+        function saida = testar(obj,padroes)
+            [n_pad, n_io] = size(padroes);
+            saida = zeros(n_pad, n_io);
+            for p = 1:1:n_pad
+                entrada = padroes(p,1:(obj.ni-1));
+                saida(p,obj.ni:n_io) = atualizar(entrada);
             end
         end
-    
+
+    end  
     
 end
