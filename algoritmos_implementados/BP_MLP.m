@@ -73,7 +73,7 @@ classdef BP_MLP
         function saida = atualizar(obj,entradas)
             % Verificando a quantidade de entradas
             try
-                obj.xi(1:obj.ni-1) = entradas(1:obj.ni-1,1);
+                obj.xi(1:obj.ni-1) = entradas(1:obj.ni-1);
             catch e
                 throw(e);
             end
@@ -144,7 +144,7 @@ classdef BP_MLP
             saida = zeros(n_pad, n_io);
             for p = 1:1:n_pad
                 entrada = padroes(p,1:(obj.ni-1));
-                saida(p,obj.ni:n_io) = atualizar(entrada);
+                saida(p,obj.ni:n_io) = obj.atualizar(entrada);
             end
         end
 
