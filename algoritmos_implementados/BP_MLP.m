@@ -1,14 +1,14 @@
 classdef BP_MLP
     properties
         
-        ni
-        nh
-        f_saida
-        E = 0
-        final
+        ni % Número de entradas (considerando o bias)
+        nh % Arquitetura
+        f_saida % Função de saída
+        E = 0 % Erro
+        final % Tamanho da arquitetura
         % Vetores de entrada e ativação
         xi
-        a
+        a 
         
         % Vetores de erro e gradientes locais
         delta
