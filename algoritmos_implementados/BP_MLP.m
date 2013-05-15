@@ -127,13 +127,14 @@ classdef BP_MLP
             J = [];
             for i = 1:1:epocas
                 padroes = padroes(randperm(n_pad),:);
+                erro_quad = 0.0;
                 for p = 1:1:n_pad
                     entrada = padroes(p,1:(obj.ni-1));
                     desejado = padroes(p,obj.ni:n_io);
                     obj.atualizar(entrada);
-                    erro_quad = obj.backpropagation(desejado, eta, alpha);
-                    J = [J; erro_quad];
+                    erro_quad = erro_quad + obj.backpropagation(desejado, eta, alpha);
                 end
+                J = [J; erro_quad];
             end
             plot(1:1:epocas,J);
         end
