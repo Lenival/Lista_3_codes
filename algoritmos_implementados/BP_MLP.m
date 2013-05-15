@@ -100,8 +100,10 @@ classdef BP_MLP
                 throw(e);
             end
 
+            % Calculando o delta na camada de saída
             obj.delta{obj.final} = obj.dtanh(obj.a{obj.final}).*obj.erro;
 
+            % Calculando o delta nas camadas ocultas
             for i = obj.final:-1:2
                 obj.ajuste{i} = eta*((obj.delta{i}*obj.a{i-1}')') + alpha*obj.c{i};
                 obj.w{i} = obj.w{i} + obj.ajuste{i};
@@ -120,23 +122,20 @@ classdef BP_MLP
             erro_quad = obj.E;
         end
         
-        function treinar(obj, padroes, iteracoes, eta, alpha)
+        function treinar(obj, padroes, epocas, eta, alpha)
             [n_pad, n_io] = size(padroes);
-            J = zeros(iteracoes,1);
-            for i = 1:1:iteracoes
-                temp = padroes(randperm(n_pad),:);
-                padroes = temp;
-                erro_quad = 0.0;
+            J = [];
+            for i = 1:1:epocas
+                padroes = padroes(randperm(n_pad),:);
                 for p = 1:1:n_pad
                     entrada = padroes(p,1:(obj.ni-1));
                     desejado = padroes(p,obj.ni:n_io);
                     obj.atualizar(entrada);
                     erro_quad = obj.backpropagation(desejado, eta, alpha);
-                    p;
-                    J(p) = erro_quad;
+                    J = [J; erro_quad];
                 end
             end
-            plot(1:1:iteracoes,J);
+            plot(1:1:epocas,J);
         end
         
         function saida = testar(obj,padroes)
