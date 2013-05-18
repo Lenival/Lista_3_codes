@@ -10,6 +10,8 @@ rede.treinar(entradas,100,0.4,0.01)
 %% Teste do BP.m
 clear
 
+entradas = [1 1 -1; -1 -1 -1; -1 1 1; 1 -1 1]
+
 [w e] = BP(2, [4 1], 'tgh', entradas, 100, 0.4, 0.01);
 
 %% Teste do backpropagation.m
@@ -18,5 +20,7 @@ clear
 x = [1 1; -1 -1; -1 1; 1 -1];
 d = [-1; -1; 1; 1];
 arq = [4 1];
+eta = 0.4;
+alpha = 0.01;
 
-[w e] = backpropagation(x, d, arq);
+[w e] = backpropagation(x, d, arq, eta, alpha);

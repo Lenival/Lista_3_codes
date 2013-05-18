@@ -11,7 +11,6 @@ v = {};
 y = {};
 delta = {};
 e = zeros(arq(nC),1);
-J = [];
 
 w{1} = rand(nin,arq(1));
 for i=2:nC
@@ -40,7 +39,6 @@ end
 for nEpocas=1:maxEpoca
     padroes = x(randperm(n),:);
     erro = 0;
-    E = 0;
     for p=1:n
         % Propagacao
         xn = [padroes(p,:) 1]';
@@ -67,16 +65,15 @@ for nEpocas=1:maxEpoca
         end
         
         for i=1:nC
-            ajuste{i} = alpha*ajuste{i} + repmat(eta*(delta{i}.*y{i+1}(1:arq(i)))',size(ajuste{i},1),1); % LINHA COM ERRO
+            ajuste{i} = alpha*ajuste{i} + repmat(eta*(delta{i}.*y{i+1}(1:arq(i)))',size(ajuste{i},1),1);
             w{i} = w{i} + ajuste{i};
         end
         
-        E = E + 0.5*(erro'*erro);
+        E = E + 0.5*(e'*e);
     end
-    J = [J; E];
     
 end
-plot(1:length(J),J);
+
 
 
 end
