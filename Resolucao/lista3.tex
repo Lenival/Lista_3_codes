@@ -30,8 +30,106 @@ Lista 3 Exerc\'icios
 
 RESOLU\c{C}\~AO: \\
 
-Inicialmente define-se a representa\c{c}\~ao da mensagem digitial tern\'aria. \'E criado um cubo centrado na posi\c{c}\~ao (0, 0, 0) e com largura 2, logo os vertices s\~ao: (-1, -1, -1), (-1, -1, 1), (-1, 1, -1), (-1, 1, 1), (1, -1, -1), (1, -1, 1), (1, 1, -1) e (1, 1, 1). \\
+\item Implemente a RBF considerando os algoritmos de treinamento para as tr\^{e}s situa\c{c}\~oes: (a) centros fixos e escolhidos aleatoriamente, (b) centros escolhidos atrav\'es da sele\c{c}\~ao auto-supervisionada (algoritmo K-means) , (c) centros escolhidos atrav\'es da sele\c{c}\~ao supervisionada, para as tr\^es quest\~oes abaixo: \\
+
+\begin{enumerate}[a)]
+\item A fun\c{c}\~ao l\'ogica $f(x_{1}, x_{2}, x_{3}) = x_{1} \oplus x_{2} \oplus x_{3}$
+
+\item \begin{equation*}
+f(x) = \left[ \frac{sin(\pi ||x||)}{\pi ||x||} \right] \text{, } x = \begin{bmatrix}
+x_{1} \\
+x_{2}
+\end{bmatrix} \text{, } |x_{1}| \leq 10 \text{ e } |x_{2}| \leq 10
+\end{equation*}
+
+\item $f(x) = x_{1}^{2} + x_{2}^{2} - 2 x_{1} x_{2} + x_{1} + x_{2} - 1$, $|x_{1}| \leq 10$, $|x_{2}| \leq 10$
+\end{enumerate}
+
+RESOLU\c{C}\~AO: \\
+
+\item Considere o problema de classifica\c{c}\~ao de padr\~oes constitu\'ido neste caso de 12 padr\~oes. A distribui\c{c}\~ao dos padr\~oes tem como base um quadrado centrado no ponto (0.5,0.5) e lados iguais a 1. Os pontos (0.5,0.5), (1.0,0.5), (0.5,1.) e (0.0, 0.5) s\~ao centros de quatro semic\'irculos que se interceptam no interior do quadrado originando quatro classes e outras oito classes nas regi\~oes de n\~ao interse\c{c}\~ao. Ap\'os gerar aleatoriamente dados que venham formar estas distribui\c{c}\~oes de dados, selecione um conjunto de treinamento e um conjunto de valida\c{c}\~ao. Solucione o problema usando RBF, SVM e M\'aquina de Comit\^e. Verifique o desempenho do classificador usando o conjunto de valida\c{c}\~ao e calculando a matriz de confus\~ao e compare com o obtido na lista anterior usando MLP. \\
+
+RESOLU\c{C}\~AO: \\
+
+\item Utilize uma rede NARX, no caso uma rede neural perceptron de m\'ultiplas camadas com realimenta\c{c}\~ao global, para fazer a predi\c{c}\~ao de um passo, at\'e predi\c{c}\~ao de tr\^es passos da s\'erie temporal $x(n) = 1 + cos(n + cos 2 (n))$. Avalie o desempenho mostrando para cada caso os erros de predi\c{c}\~ao. \\
+
+RESOLU\c{C}\~AO: \\
+
+\item Implemente uma rede de Hopfield, para reconhecer as letras AFC. (Para cada letra forme uma matriz bin\'aria de pixel). Verifique o desempenho com as letras sendo apresentadas de forma ruidosa. \\
+
+RESOLU\c{C}\~AO: \\
+
+\item Dado o modelo n\~ao linear de espa\c{c}o de estado abaixo, obtenha o modelo de espa\c{c}o de estados linearizado para ser utilizado no algoritmo EKF. \\
+
+\begin{equation*}
+x(n+1) = f(n, x(n)) + v_{1}(n)
+\end{equation*}
+
+\begin{equation*}
+y(n) = c(n,x(n)) + v_{2}(n)
+\end{equation*}
+
+\begin{equation*}
+f(n, x(n)) = \begin{bmatrix}
+x_{1}(n) + x_{2}^{2}(n) \\
+nx_{1}(n) - x_{1}(n)x_{2}(n)
+\end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+c(n, x(n)) = x_{1}(n)x_{2}^{2}(n) + v_{2}(n)
+\end{equation*}
+
+RESOLU\c{C}\~AO: \\
+
+\item Um problema interessante para testar a capacidade de uma rede neural atuar como classificado de padr\~oes \'e o problema das duas espirais intercaladas. Gere os exemplos de treinamento usando as seguintes equa\c{c}\~oes: \\
+para espiral 1 $x = \frac{\theta}{4} cos(\theta)$ , $y = \frac{\theta}{4} sen(\theta)$ , $\theta \geq 0$ \\
+para espiral 2 $x = (\frac{\theta}{4} + 0.8) cos(\theta)$ , $y = (\frac{\theta}{4} + 0.8) sen(\theta)$ , $\theta \geq 0$ \\
+fazendo $\theta$ assumir 51 igualmente espa\c{c}ados valores entre 0 e 20 radianos. Utilize uma rede competitiva e em seguida uma rede SOM para atuar como classificador auto-supervisionado, isto \'e, a espiral 1 sendo uma classe e espiral 2 sendo outra classe. Para comparar as regi\~oes de decis\~oes formadas pela rede , gere uma grade uniforme com 100 x 100 exemplos de teste em um quadrado [-5,5]. Esboce os pontos classificados pela rede. \\
+
+RESOLU\c{C}\~AO: \\
+
+\item Considere a distribui\c{c}\~ao dos padr\~oes que tem como base em um c\'irculo com raio igual a 0.25 centrado origem. Os pontos +1 e -1 de cada eixo s\~ao centros de quatro semic\'irculos que se interceptam no interior a as regi\~oes que excluem o c\'irculo de raio igual a 0.25 do quadrado originando quatro classes. Gere aleatoriamente os dados que venham formar estas distribui\c{c}\~oes de dados. Utilize a rede SOM de modo a quantizar atrav\'es da distribui\c{c}\~ao de neur\^onios a distribui\c{c}\~ao dos dados. \\
+
+RESOLU\c{C}\~AO: \\
+
+\item Pesquise e apresente o formalismo do algoritmo K-means por lote. \\ 
+
+RESOLU\c{C}\~AO: \\
+
+\item Pesquise e apresente o formalismo do algoritmo SOM por lote. \\
+
+RESOLU\c{C}\~AO: \\
+
 
 \end{enumerate}
+
+\newpage
+
+\begin{center}
+Trabalhos
+\end{center}
+
+\begin{enumerate}[1.]
+\item Pesquise e apresente um trabalho sobre a reconstru\c{c}\~ao tridimensional usando a rede SOM e a rede Neuro-GAS. \\
+
+\item Pesquise e apresente um trabalho sobre Neurofuzzy.
+\end{enumerate}
+
+Data de entrega: 23/05/2013 \\
+
+A entrega e apresenta\c{c}\~ao dos trabalhos correspondem a um processo de avalia\c{c}\~ao. Portanto a presen\c{c}a \'e obrigat\'orio. \\
+
+Os trabalhos e a lista podem ser feito em grupo de at\'e tr\^es componentes. \\
+
+Na apresenta\c{c}\~ao os componentes ser\~ao submetidos a questionamentos sobre a solu\c{c}\~ao da lista e o desenvolvimento dos trabalhos. \\
+
+\newpage
+
+\begin{center}
+Desenvolvimento da Pesquisa
+\end{center}
+
+...
 
 \end{document}
