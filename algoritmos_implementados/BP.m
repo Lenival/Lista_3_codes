@@ -9,7 +9,6 @@ function [wOut J] = BP(entradas, arquitetura, saida, padroes, epocas, eta, alpha
     xi = ones(ni,1);
     a = {};
     delta = {};
-    Wa = [0; 0];
 
     for i = 1:1:final-1
         %Os +1 estão sendo colocados para usar como bias

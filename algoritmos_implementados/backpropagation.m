@@ -33,9 +33,10 @@ for i=1:nC
     v{i} = zeros(arq(i),1);
 end
 
-for i=1:nC
-    delta{i} = zeros(arq(i),1);
+for i=1:(nC-1)
+    delta{i} = [zeros(arq(i),1); ones(1,1)];
 end
+delta{nC} = zeros(arq(nC),1);
 
 for nEpocas=1:maxEpoca
     padroes = x(randperm(n),:);
@@ -62,12 +63,12 @@ for nEpocas=1:maxEpoca
         delta{nC} = e*dtanh(v{nC});
         
         for i=(nC-1):-1:1
-            somatorio = delta{i+1}'*w{i+1}(1:length(w{i+1})-1);
-            delta{i} = dtanh(v{i}).*somatorio;
+            somatorio = delta{i}'*w{i+1};
+            delta{i}(1:length(delta{i})-1) = dtanh(v{i}).*somatorio;
         end
         
         for i=1:nC
-            ajuste{i} = alpha*ajuste{i} + repmat(eta*(delta{i}.*y{i+1}(1:arq(i)))',size(ajuste{i},1),1); % LINHA COM ERRO
+            ajuste{i} = alpha*ajuste{i} + eta*(delta{i}*y{i+1})'; % LINHA COM ERRO
             w{i} = w{i} + ajuste{i};
         end
         
