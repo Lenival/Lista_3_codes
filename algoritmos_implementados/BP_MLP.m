@@ -8,7 +8,8 @@ classdef BP_MLP
         final % Tamanho da arquitetura
         % Vetores de entrada e ativação
         xi
-        a 
+        a
+        Wa
         
         % Vetores de erro e gradientes locais
         delta
@@ -103,7 +104,7 @@ classdef BP_MLP
             % Calculando o delta na camada de saída
             obj.delta{obj.final} = obj.dtanh(obj.a{obj.final}).*obj.erro;
 
-            % Calculando o delta nas camadas ocultas
+            % Calculando o delta e atualizando as sinapses nas camadas ocultas
             for i = obj.final:-1:2
                 obj.ajuste{i} = eta*((obj.delta{i}*obj.a{i-1}')') + alpha*obj.c{i};
                 obj.w{i} = obj.w{i} + obj.ajuste{i};
@@ -127,7 +128,7 @@ classdef BP_MLP
             J = [];
             for i = 1:1:epocas
                 padroes = padroes(randperm(n_pad),:);
-                erro_quad = 0.0;
+                erro_quad = 0;
                 for p = 1:1:n_pad
                     entrada = padroes(p,1:(obj.ni-1));
                     desejado = padroes(p,obj.ni:n_io);
