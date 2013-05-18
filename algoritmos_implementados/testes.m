@@ -8,9 +8,13 @@ entradas = [1 1 -1; -1 -1 -1; -1 1 1; 1 -1 1]
 rede.treinar(entradas,100,0.4,0.01)
 
 %% Teste do BP.m
+clear
+
 [w e] = BP(2, [4 1], 'tgh', entradas, 100, 0.4, 0.01);
 
 %% Teste do backpropagation.m
+clear
+
 x = [1 1; -1 -1; -1 1; 1 -1];
 d = [-1; -1; 1; 1];
 arq = [4 1];
