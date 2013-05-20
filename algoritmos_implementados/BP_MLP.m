@@ -128,7 +128,7 @@ classdef BP_MLP < handle
             [n_pad, n_io] = size(padroes);
             J = [];
             for i = 1:1:epocas
-                padroes = padroes(randperm(n_pad),:);
+                padroes = padroes(randperm(n_pad),:); % Misturando as entradas
                 erro_quad = 0;
                 for p = 1:1:n_pad
                     entrada = padroes(p,1:(obj.ni-1));

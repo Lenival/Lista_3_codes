@@ -12,7 +12,7 @@ clear
 
 entradas = [1 1 -1; -1 -1 -1; -1 1 1; 1 -1 1]
 
-[w e] = BP(2, [4 1], 'tgh', entradas, 100, 0.4, 0.01);
+[w e] = BP(2, [4 1], 'tgh', entradas, 100, 0.2, 0.5);
 
 %% Teste do backpropagation.m
 clear
