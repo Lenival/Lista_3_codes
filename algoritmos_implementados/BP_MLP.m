@@ -7,8 +7,14 @@ classdef BP_MLP < handle
         E = 0 % Erro
         final % Tamanho da arquitetura
         % Vetores de entrada e ativação
+<<<<<<< HEAD
         xi % Vetor de entradas
         a  % Saída de cada neurônio
+=======
+        xi
+        a
+        Wa
+>>>>>>> ba5d059ccf5ac87c7b618868414580c20144ec92
         
         % Vetores de erro e gradientes locais
         delta
@@ -103,7 +109,7 @@ classdef BP_MLP < handle
             % Calculando o delta na camada de saída
             obj.delta{obj.final} = obj.dtanh(obj.a{obj.final}).*obj.erro;
 
-            % Calculando o delta nas camadas ocultas
+            % Calculando o delta e atualizando as sinapses nas camadas ocultas
             for i = obj.final:-1:2
                 obj.ajuste{i} = eta*((obj.delta{i}*obj.a{i-1}')') + alpha*obj.c{i};
                 obj.w{i} = obj.w{i} + obj.ajuste{i};
@@ -127,7 +133,7 @@ classdef BP_MLP < handle
             J = [];
             for i = 1:1:epocas
                 padroes = padroes(randperm(n_pad),:);
-                erro_quad = 0.0;
+                erro_quad = 0;
                 for p = 1:1:n_pad
                     entrada = padroes(p,1:(obj.ni-1));
                     desejado = padroes(p,obj.ni:n_io);
