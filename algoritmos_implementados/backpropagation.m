@@ -1,4 +1,4 @@
-function [w e] = backpropagation(x, d, arq, eta, alpha)
+function [w erro] = backpropagation(x, d, arq, eta, alpha)
 
 nC = length(arq); % Numero de camadas
 n = length(x); % Quantidade de amostras da entrada
@@ -10,7 +10,7 @@ w = {};
 v = {};
 y = {};
 delta = {};
-e = zeros(arq(nC),1);
+erro = zeros(arq(nC),1);
 J = [];
 
 w{1} = rand(nin,arq(1));
@@ -21,6 +21,11 @@ end
 ajuste{1} = zeros(nin,arq(1));
 for i=2:nC
     ajuste{i} = zeros(arq(i-1)+1,arq(i));
+end
+
+c{1} = zeros(nin,arq(1));
+for i=2:nC
+    c{i} = zeros(arq(i-1)+1,arq(i));
 end
 
 y{1} = zeros(nin,1);
@@ -50,25 +55,22 @@ for nEpocas=1:maxEpoca
         
         for i=1:nC
             v{i} = (y{i}'*w{i})';
-        end
-        
-        for i=1:nC
             y{i+1}(1:arq(i)) = tanh(v{i});
         end
         
         erro = dn - y{nC+1};
         
         % Retropropagacao
-        delta{nC} = e*dtanh(v{nC});
+        delta{nC} = erro*dtanh(v{nC});
         
-        for i=(nC-1):-1:1
-            somatorio = delta{i}'*w{i+1}(1:arq(i));
-            delta{i} = dtanh(v{i}).*somatorio;
-        end
-        
-        for i=1:nC
-            ajuste{i} = eta*(delta{i}*y{i}')' + alpha*ajuste{i};
+        for i=nC:-1:1
+            ajuste{i} = eta*(delta{i}*y{i}')' + alpha*c{i};
+            c{i} = ajuste{i};
             w{i} = w{i} + ajuste{i};
+            if i>1
+                somatorio = delta{i}'*w{i}(1:arq(i-1))';
+                delta{i-1} = dtanh(v{i-1}).*somatorio';
+            end
         end
         
         E = E + 0.5*(erro'*erro);
