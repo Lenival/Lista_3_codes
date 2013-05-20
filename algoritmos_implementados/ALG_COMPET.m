@@ -9,7 +9,7 @@ classdef ALG_COMPET < handle
     end
     methods
         function obj = ALG_COMPET(n_ent,n_amost, n_class)
-            % inicialização da matriz e entrada
+            % inicialização da matriz de pesos e de amostaras
             obj.xi = ones(n_ent+1, n_amost);% O +1 é para o bias
             obj.w = rand(n_ent+1,n_class);        
         end
@@ -18,11 +18,11 @@ classdef ALG_COMPET < handle
             cx=size(obj.xi,2);
             obj.xi(2:lx,:) = entrada;
             for xc = 1:cx
-                obj.xi(xc) = obj.xi(xc)/norm(obj.xi(xc));
+                obj.xi(:,xc) = obj.xi(:,xc)/norm(obj.xi(:,xc));
             end
-            cw=size(obj.xi,2);
+            cw=size(obj.w,2);
             for wc = 1:cw
-                obj.xi(wc) = obj.xi(wc)/norm(obj.xi(wc));
+                obj.w(:,wc) = obj.w(:,wc)/norm(obj.w(:,wc));
             end
         end
     end
