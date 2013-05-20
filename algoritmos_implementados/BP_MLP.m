@@ -141,13 +141,14 @@ classdef BP_MLP < handle
             plot(1:1:epocas,J);
         end
         
-        function saida = testar(obj,padroes)
+        function saida_funcao = testar(obj,padroes)
             [n_pad, n_io] = size(padroes);
-            saida = zeros(n_pad, n_io);
+            saida = zeros(n_pad,1);
             for p = 1:1:n_pad
-                entrada = padroes(p,1:(obj.ni-1));
-                saida(p,obj.ni:n_io) = obj.atualizar(entrada);
+                entrada = padroes(p,:);
+                saida(p,1) = obj.atualizar(entrada);
             end
+            saida_funcao = saida;
         end
 
     end  
