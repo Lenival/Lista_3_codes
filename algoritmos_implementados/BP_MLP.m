@@ -7,14 +7,10 @@ classdef BP_MLP < handle
         E = 0 % Erro
         final % Tamanho da arquitetura
         % Vetores de entrada e ativação
-<<<<<<< HEAD
+
         xi % Vetor de entradas
         a  % Saída de cada neurônio
-=======
-        xi
-        a
-        Wa
->>>>>>> ba5d059ccf5ac87c7b618868414580c20144ec92
+
         
         % Vetores de erro e gradientes locais
         delta
