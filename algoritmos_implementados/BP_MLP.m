@@ -1,4 +1,4 @@
-classdef BP_MLP
+classdef BP_MLP < handle
     properties
         
         ni % Número de entradas (considerando o bias)
@@ -7,8 +7,8 @@ classdef BP_MLP
         E = 0 % Erro
         final % Tamanho da arquitetura
         % Vetores de entrada e ativação
-        xi
-        a 
+        xi % Vetor de entradas
+        a  % Saída de cada neurônio
         
         % Vetores de erro e gradientes locais
         delta
@@ -16,7 +16,7 @@ classdef BP_MLP
         
         % Matrizes de pesos, ajustes e momento
         w
-        ajuste
+        ajuste % Aqui será delta_w
         c
         
     end
@@ -42,8 +42,8 @@ classdef BP_MLP
             
             for i = 1:1:self.final-1
                 %Os +1 estão sendo colocados para usar como bias
-                self.a{i} = ones(self.nh(i)+1,1);
-                self.delta{i} = ones(self.nh(i)+1,1);
+                self.a{i} = ones(self.nh(i)+1,1); 
+                self.delta{i} = ones(self.nh(i),1);
             end
             
             self.a{self.final} = ones(self.nh(self.final),1);
@@ -59,12 +59,12 @@ classdef BP_MLP
             self.c = {};
             self.ajuste = {};
         
-            self.w{1} = rand(self.ni, self.nh(1));
+            self.w{1} = 2*rand(self.ni, self.nh(1))-ones(self.ni, self.nh(1));
             self.c{1} = zeros(self.ni, self.nh(1));
             self.ajuste{1} = zeros(self.ni, self.nh(1));
 
-            for i = 1:1:self.final-1
-                self.w{i+1} = rand(self.nh(i)+1,self.nh(i+1));
+            for i = 1:1:self.final-1 % O -1 é devido à inicialização do primeiro w
+                self.w{i+1} = 2*rand(self.nh(i)+1,self.nh(i+1))-ones(self.nh(i)+1,self.nh(i+1));
                 self.c{i+1} = zeros(self.nh(i)+1,self.nh(i+1));
                 self.ajuste{i+1} = zeros(self.nh(i)+1,self.nh(i+1));
             end
@@ -131,8 +131,8 @@ classdef BP_MLP
                 for p = 1:1:n_pad
                     entrada = padroes(p,1:(obj.ni-1));
                     desejado = padroes(p,obj.ni:n_io);
-                    obj.atualizar(entrada);
-                    erro_quad = erro_quad + obj.backpropagation(desejado, eta, alpha);
+                    atualizar(obj,entrada);
+                    erro_quad = erro_quad + backpropagation(obj,desejado, eta, alpha);
                 end
                 J = [J; erro_quad];
             end
