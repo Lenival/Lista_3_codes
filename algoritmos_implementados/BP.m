@@ -13,7 +13,7 @@ function [wOut J] = BP(entradas, arquitetura, saida, padroes, epocas, eta, alpha
     for i = 1:1:final-1
         %Os +1 estão sendo colocados para usar como bias
         a{i} = ones(nh(i)+1,1);
-        delta{i} = ones(nh(i)+1,1);
+        delta{i} = ones(nh(i),1);
     end
 
     a{final} = ones(nh(final),1);
@@ -64,19 +64,19 @@ function [wOut J] = BP(entradas, arquitetura, saida, padroes, epocas, eta, alpha
             delta{final} = dtanh(a{final}).*erro;
 
             for i = final:-1:2
-                ajuste{i} = w{i} + eta*((delta{i}*a{i-1}')') + alpha*c{i};
-                c{i} = w{i};
-                w{i} = ajuste{i};
+                ajuste{i} = eta*((delta{i}*a{i-1}')') + alpha*c{i};
+                c{i} = ajuste{i};
+                w{i} = w{i} + ajuste{i};
                 somatorio = (delta{i}'*(w{i}(1:nh(i)))')';
                 delta{i-1} = dtanh(a{i-1}(1:nh(i-1))).*somatorio;
             end
 
-            ajuste{1} = w{1} + eta*((delta{1}*xi')') + alpha*c{1};
-            c{1} = w{1};
-            w{1} = ajuste{1};
+            ajuste{1} = eta*((delta{1}*xi')') + alpha*c{1};
+            c{1} = ajuste{1};
+            w{1} = w{1} + ajuste{1};
 
             E = 0.5*(erro'*erro);
-            
+
             erro_quad = erro_quad + E;
         end
         J = [J; erro_quad];
