@@ -138,6 +138,7 @@ classdef BP_MLP < handle
                 end
                 J = [J; erro_quad];
             end
+            figure;
             plot(1:1:epocas,J);
         end
         
