@@ -36,4 +36,4 @@ a = [c1 c2];
 
 redet = ALG_COMPET(2,20,2);
 redet.nor(a)
-redet.trei(0.9)
+redet.trei(1)
