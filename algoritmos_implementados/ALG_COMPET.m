@@ -49,18 +49,20 @@ classdef ALG_COMPET < handle
                         dist(j) = sqrt(somatxw);
                     end
                     [mdist(k,epoca) ind] = min(dist);
-                    obj.w(:,ind) = obj.w(:,ind)+ obj.eta*(obj.xi(:,k)-obj.w(:,ind));
+                    obj.w(:,ind) = obj.wn(:,ind)+ obj.eta*(obj.xin(:,k)-obj.wn(:,ind));
                 end
                 
 %                 if cond
 %                 a=0;
 %                 end
-                if epoca == 100
+                if epoca == 1000
                     a=0;
                 end
                 epoca=epoca+1;
             end
-            
+            plot3(obj.w(1,:),obj.w(2,:),obj.w(3,:),'*r')
+            hold on
+            plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
         end
     end
     

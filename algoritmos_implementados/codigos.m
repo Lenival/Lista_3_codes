@@ -24,3 +24,16 @@ eta = 0.4;
 alpha = 0.01;
 
 [w e] = backpropagation(x, d, arq, eta, alpha);
+
+%% Teste do algoritmo competitivo
+clear
+close
+c1 = (rand(2,10)*.2)+repmat([-1;0.5],1,10);
+c2 = (rand(2,10)*.2)+repmat([0.5;1],1,10);
+a = [c1 c2];
+%plot (a(1,:),a(2,:),'*')
+%grid on
+
+redet = ALG_COMPET(2,20,2);
+redet.nor(a)
+redet.trei(0.9)
