@@ -40,7 +40,7 @@ a2 = [c4 c3];
 redet = ALG_COMPET(2,20,2);
 redet.nor(a1)
 figure
-[md w] = redet.trei(0.1,1000);
+[md w] = redet.trei(0.1,100);
 figure
 redet.valid(a2, w);
 

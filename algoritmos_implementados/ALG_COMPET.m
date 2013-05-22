@@ -13,11 +13,21 @@ classdef ALG_COMPET < handle
     methods
         function obj = ALG_COMPET(n_ent,n_amost, n_class)
             % inicialização da matriz de pesos e de amostaras
-            obj.xi = ones(n_ent+1, n_amost);% O +1 é para o bias
-            obj.w = rand(n_ent+1,n_class);   
-            obj.lx = size(obj.xi,1);% nº de entradas
-            obj.cx = size(obj.xi,2);% nº de amostras
-            obj.cw = size(obj.w,2);% nº de neurônios
+            obj.xi = -1*ones(n_ent+1, n_amost);% O +1 é para o bias -1
+            obj.w = rand(n_ent+1,n_class); 
+            nw = ceil(0.2*n_amost);
+            sxi = 0;
+            for j = 1:n_class
+                for i = 1:n_ent
+                    for k = 1:nw
+                        sxi = sxi + obj.xi(i,k);
+                    end
+                    obj.w(i,j) = (sxi/nw)*.01*j;
+                end
+            end
+            obj.lx = n_ent+1;% nº de entradas
+            obj.cx = n_amost;% nº de amostras
+            obj.cw = n_class;% nº de neurônios
         end
         function nor(obj,entradat)
             obj.xi(2:obj.lx,:) = entradat;
@@ -31,6 +41,7 @@ classdef ALG_COMPET < handle
             plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
             hold on
             plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
+            sphere            
             grid
         end
         function [mdist W] = trei(obj,txap,nep)
@@ -65,7 +76,7 @@ classdef ALG_COMPET < handle
             grid
             W = obj.wn;
         end
-        function mdist = valid(obj, entradav, pesost)
+        function valid(obj, entradav, pesost)
             obj.xi(2:obj.lx,:) = entradav;
             % Normalização dos vetores de pesos e de treinamento
             for xc = 1:obj.cx
