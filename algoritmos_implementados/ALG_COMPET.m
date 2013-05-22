@@ -28,6 +28,10 @@ classdef ALG_COMPET < handle
             for wc = 1:obj.cw
                 obj.wn(:,wc) = obj.w(:,wc)/norm(obj.w(:,wc));
             end
+            plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
+            hold on
+            plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
+            grid
         end
         function mdist = trei(obj,txap,nep)
             obj.eta = txap; %Taxa de aprendizagem
@@ -58,14 +62,19 @@ classdef ALG_COMPET < handle
             plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
             hold on
             plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
+            grid
         end
-        function valid(ojb,entradav, pesost)
+        function valid(obj,entradav, pesost)
             obj.xi(2:obj.lx,:) = entradav;
             % Normalização dos vetores de pesos e de treinamento
             for xc = 1:obj.cx
                 obj.xin(:,xc) = obj.xi(:,xc)/norm(obj.xi(:,xc));
             end
             obj.wn = pesost;
+            plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
+            hold on
+            plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
+            grid
             for k = 1:obj.cx
                     for j = 1:obj.cw
                         somatxw = 0;
@@ -74,9 +83,14 @@ classdef ALG_COMPET < handle
                         end
                         dist(j) = sqrt(somatxw);
                     end
-                    [mdist(k,epoca) ind] = min(dist);
-                    obj.wn(:,ind) = obj.wn(:,ind)+ obj.eta*(obj.xin(:,k)-obj.wn(:,ind));
+                    [mdist ind] = min(dist);
+                    obj.xin(:,k) = obj.wn(:,ind); 
             end
+            figure
+            plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
+            hold on
+            plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
+            grid
         end
     end
     
