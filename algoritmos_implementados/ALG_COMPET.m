@@ -19,8 +19,8 @@ classdef ALG_COMPET < handle
             obj.cx = size(obj.xi,2);% nº de amostras
             obj.cw = size(obj.w,2);% nº de neurônios
         end
-        function nor(obj,entrada)
-            obj.xi(2:obj.lx,:) = entrada;
+        function nor(obj,entradat)
+            obj.xi(2:obj.lx,:) = entradat;
             % Normalização dos vetores de pesos e de treinamento
             for xc = 1:obj.cx
                 obj.xin(:,xc) = obj.xi(:,xc)/norm(obj.xi(:,xc));
@@ -29,7 +29,7 @@ classdef ALG_COMPET < handle
                 obj.wn(:,wc) = obj.w(:,wc)/norm(obj.w(:,wc));
             end
         end
-        function mdist = trei(obj,txap)
+        function mdist = trei(obj,txap,nep)
             obj.eta = txap; %Taxa de aprendizagem
             a=0;
             dist = [];
@@ -40,7 +40,6 @@ classdef ALG_COMPET < handle
                 a=0;
                 
                 for k = 1:obj.cx
-                    
                     for j = 1:obj.cw
                         somatxw = 0;
                         for i = 1:obj.lx
@@ -51,11 +50,7 @@ classdef ALG_COMPET < handle
                     [mdist(k,epoca) ind] = min(dist);
                     obj.wn(:,ind) = obj.wn(:,ind)+ obj.eta*(obj.xin(:,k)-obj.wn(:,ind));
                 end
-                
-%                 if cond
-%                 a=0;
-%                 end
-                if epoca == 1000
+                if epoca == nep
                     a=1;
                 end
                 epoca=epoca+1;
@@ -63,6 +58,25 @@ classdef ALG_COMPET < handle
             plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
             hold on
             plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
+        end
+        function valid(ojb,entradav, pesost)
+            obj.xi(2:obj.lx,:) = entradav;
+            % Normalização dos vetores de pesos e de treinamento
+            for xc = 1:obj.cx
+                obj.xin(:,xc) = obj.xi(:,xc)/norm(obj.xi(:,xc));
+            end
+            obj.wn = pesost;
+            for k = 1:obj.cx
+                    for j = 1:obj.cw
+                        somatxw = 0;
+                        for i = 1:obj.lx
+                            somatxw = somatxw + (obj.xin(i,k)-obj.wn(i,j))^2;
+                        end
+                        dist(j) = sqrt(somatxw);
+                    end
+                    [mdist(k,epoca) ind] = min(dist);
+                    obj.wn(:,ind) = obj.wn(:,ind)+ obj.eta*(obj.xin(:,k)-obj.wn(:,ind));
+            end
         end
     end
     
