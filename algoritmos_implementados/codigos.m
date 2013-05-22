@@ -38,9 +38,14 @@ a2 = [c3 c4];
 %grid on
 
 redet = ALG_COMPET(2,20,2);
+<<<<<<< HEAD
 redet.nor(a1)
 figure
 md = redet.trei(0.1,1000);
 figure
 redet.valid(a2, redet.wn);
 
+=======
+redet.nor(a)
+[md w] = redet.trei(0.1,1000);
+>>>>>>> 7f69c6388bc058a1929a9e614bf37d7a6f69ee74
