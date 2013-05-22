@@ -62,15 +62,10 @@ classdef ALG_COMPET < handle
             plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
             hold on
             plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
-<<<<<<< HEAD
             grid
-        end
-        function valid(obj,entradav, pesost)
-=======
             W = obj.wn;
         end
-        function mdist = valid(obj,entradav, pesost)
->>>>>>> 7f69c6388bc058a1929a9e614bf37d7a6f69ee74
+        function mdist = valid(obj, entradav, pesost)
             obj.xi(2:obj.lx,:) = entradav;
             % Normalização dos vetores de pesos e de treinamento
             for xc = 1:obj.cx
