@@ -89,13 +89,9 @@ classdef ALG_COMPET < handle
                         end
                         dist(j) = sqrt(somatxw);
                     end
-<<<<<<< HEAD
                     [mdist ind] = min(dist);
                     obj.xin(:,k) = obj.wn(:,ind); 
-=======
-                    [mdist(k,epoca) ind] = min(dist);
-                    %obj.wn(:,ind) = obj.wn(:,ind)+ obj.eta*(obj.xin(:,k)-obj.wn(:,ind));
->>>>>>> 7f69c6388bc058a1929a9e614bf37d7a6f69ee74
+                    
             end
             figure
             plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
