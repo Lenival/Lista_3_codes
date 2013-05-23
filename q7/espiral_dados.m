@@ -7,7 +7,7 @@ theta = linspace(0,20,51);
 x1 = (theta/4).*cos(theta);
 y1 = (theta/4).*sin(theta);
 
-%"""Eequaçao 2"""
+%"""Equacao 2"""
 x2 = (0.8+theta/4).*cos(theta);
 y2 = (0.8+theta/4).*sin(theta);
 
