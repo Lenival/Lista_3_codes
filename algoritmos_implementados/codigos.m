@@ -5,12 +5,12 @@ rede = BP_MLP(2,[4 1],'tgh')
 
 entradas = [1 1 -1; -1 -1 -1; -1 1 1; 1 -1 1]
 
-rede.treinar(entradas,100,0.4,0.01)
+rede.treinar(entradas,100,0.2,0.5)
 
 %% Teste do BP.m
 clear
 
-entradas = [1 1 -1; -1 -1 -1; -1 1 1; 1 -1 1]
+entradas = [1 1 -1; -1 -1 -1; -1 1 1; 1 -1 1; 1 1 -1; -1 -1 -1; -1 1 1; 1 -1 1; 1 1 -1; -1 -1 -1; -1 1 1; 1 -1 1; 1 1 -1; -1 -1 -1; -1 1 1; 1 -1 1]
 
 [w e] = BP(2, [4 1], 'tgh', entradas, 100, 0.2, 0.5);
 
