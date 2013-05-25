@@ -31,13 +31,15 @@ classdef ALG_COMPET < handle
         end
         function nor(obj,entradat)
             obj.xi(2:obj.lx,:) = entradat;
+%             obj.xin = obj.xi/norm(obj.xi);
+%             obj.wn = obj.w/norm(obj.w);
             % Normalização dos vetores de pesos e de treinamento
-            for xc = 1:obj.cx
-                obj.xin(:,xc) = obj.xi(:,xc)/norm(obj.xi(:,xc));
-            end
-            for wc = 1:obj.cw
-                obj.wn(:,wc) = obj.w(:,wc)/norm(obj.w(:,wc));
-            end
+             for xc = 1:obj.cx
+                 obj.xin(:,xc) = obj.xi(:,xc)/norm(obj.xi(:,xc));
+             end
+             for wc = 1:obj.cw
+                 obj.wn(:,wc) = obj.w(:,wc)/norm(obj.w(:,wc));
+             end
             plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
             hold on
             plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
@@ -65,6 +67,7 @@ classdef ALG_COMPET < handle
                     [mdist(k,epoca) ind] = min(dist);
                     obj.wn(:,ind) = obj.wn(:,ind)+ obj.eta*(obj.xin(:,k)-obj.wn(:,ind));
                 end
+%                 obj.wn = obj.wn/norm(obj.wn);
                 if epoca == nep
                     a=1;
                 end
