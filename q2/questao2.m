@@ -45,3 +45,9 @@ x2 = -10:0.1:10;
 x = [x1; x2];
 
 f = x1.^2 + x2.^2 - 2.*x1.*x2 + x1 + x2 - 1;
+
+padroes = [x; f]';
+
+net = newrbe(padroes(:,1:2)',padroes(:,3)');
+
+y = sim(net,padroes(:,1:2)')';
