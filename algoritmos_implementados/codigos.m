@@ -27,12 +27,12 @@ alpha = 0.01;
 
 %% Teste do algoritmo competitivo
 clear
-close
+close all
 c1 = (rand(2,10)*.2)+repmat([-1;0.5],1,10);
 c2 = (rand(2,10)*.2)+repmat([0.5;1],1,10);
 a1 = [c1 c2];
-c3 = (rand(2,10)*.8)+repmat([-1;0.5],1,10);
-c4 = (rand(2,10)*.8)+repmat([0.5;1],1,10);
+c3 = (rand(2,10)*1)+repmat([-1;0.5],1,10);
+c4 = (rand(2,10)*1)+repmat([0.5;1],1,10);
 a2 = [c4 c3];
 %plot (a(1,:),a(2,:),'*')
 %grid on
@@ -42,5 +42,5 @@ redet.nor(a1)
 figure
 [md w] = redet.trei(0.1,100);
 figure
-redet.valid(a2, w);
+wv = redet.valid(a2, w);
 

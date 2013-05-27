@@ -31,8 +31,6 @@ classdef ALG_COMPET < handle
         end
         function nor(obj,entradat)
             obj.xi(2:obj.lx,:) = entradat;
-%             obj.xin = obj.xi/norm(obj.xi);
-%             obj.wn = obj.w/norm(obj.w);
             % Normalização dos vetores de pesos e de treinamento
              for xc = 1:obj.cx
                  obj.xin(:,xc) = obj.xi(:,xc)/norm(obj.xi(:,xc));
@@ -55,7 +53,6 @@ classdef ALG_COMPET < handle
             epoca = 1;
             while a==0
                 a=0;
-                
                 for k = 1:obj.cx
                     for j = 1:obj.cw
                         somatxw = 0;
@@ -67,7 +64,6 @@ classdef ALG_COMPET < handle
                     [mdist(k,epoca) ind] = min(dist);
                     obj.wn(:,ind) = obj.wn(:,ind)+ obj.eta*(obj.xin(:,k)-obj.wn(:,ind));
                 end
-%                 obj.wn = obj.wn/norm(obj.wn);
                 if epoca == nep
                     a=1;
                 end
@@ -79,7 +75,7 @@ classdef ALG_COMPET < handle
             grid
             W = obj.wn;
         end
-        function valid(obj, entradav, pesost)
+        function ind = valid(obj, entradav, pesost)
             obj.xi(2:obj.lx,:) = entradav;
             % Normalização dos vetores de pesos e de treinamento
             for xc = 1:obj.cx
@@ -90,6 +86,7 @@ classdef ALG_COMPET < handle
             hold on
             plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
             grid
+            figure
             for k = 1:obj.cx
                     for j = 1:obj.cw
                         somatxw = 0;
@@ -98,16 +95,17 @@ classdef ALG_COMPET < handle
                         end
                         dist(j) = sqrt(somatxw);
                     end
-                    [mdist ind] = min(dist);
-                    obj.xin(:,k) = obj.wn(:,ind); 
-                    
+                    [mdist ind(k)] = min(dist);
+                    if ind == 1
+                         plot3(obj.xin(1,k),obj.xin(2,k),obj.xin(3,k),'*k')
+                    else
+                        plot3(obj.xin(1,k),obj.xin(2,k),obj.xin(3,k),'*r')
+                    end
+                    hold on    
             end
-            figure
-            plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
-            hold on
-            plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
+            plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*y')
             grid
-        end
+         end
     end
     
 end
