@@ -14,17 +14,17 @@ classdef ALG_COMPET < handle
         function obj = ALG_COMPET(n_ent,n_amost, n_class)
             % inicialização da matriz de pesos e de amostaras
             obj.xi = -1*ones(n_ent+1, n_amost);% O +1 é para o bias -1
-            obj.w = rand(n_ent+1,n_class); 
-            nw = ceil(0.2*n_amost);
+            obj.w = 2*rand(n_ent+1,n_class)-1;
+            nw = ceil(n_amost);
             sxi = 0;
-            for j = 1:n_class
-                for i = 1:n_ent
-                    for k = 1:nw
-                        sxi = sxi + obj.xi(i,k);
-                    end
-                    obj.w(i,j) = (sxi/nw)*.01*j;
-                end
-            end
+%              for j = 1:n_class
+%                  for i = 1:n_ent
+%                       for k = 1:nw
+%                            %sxi = sxi + obj.xi(i,k);
+%                       end
+%                      %obj.w(i,j) = (sxi/nw)*j;
+%                  end
+%              end
             obj.lx = n_ent+1;% nº de entradas
             obj.cx = n_amost;% nº de amostras
             obj.cw = n_class;% nº de neurônios
@@ -38,10 +38,11 @@ classdef ALG_COMPET < handle
              for wc = 1:obj.cw
                  obj.wn(:,wc) = obj.w(:,wc)/norm(obj.w(:,wc));
              end
-            plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
+            plot(obj.wn(2,:),obj.wn(3,:),'*r')
             hold on
-            plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
-            sphere            
+            plot(obj.xin(2,1:51),obj.xin(3,1:51),'*b')
+            plot(obj.xin(2,52:102),obj.xin(3,52:102),'*y')
+            %sphere            
             grid
         end
         function [mdist W] = trei(obj,txap,nep)
@@ -69,9 +70,10 @@ classdef ALG_COMPET < handle
                 end
                 epoca=epoca+1;
             end
-            plot3(obj.wn(1,:),obj.wn(2,:),obj.wn(3,:),'*r')
+            plot(obj.wn(2,:),obj.wn(3,:),'*r')
             hold on
-            plot3(obj.xin(1,:),obj.xin(2,:),obj.xin(3,:),'*')
+            plot(obj.xin(2,1:51),obj.xin(3,1:51),'*b')
+            plot(obj.xin(2,52:102),obj.xin(3,52:102),'*y')
             grid
             W = obj.wn;
         end
