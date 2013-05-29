@@ -36,6 +36,14 @@ classdef ALG_SOM < handle
             obj.w = 6*rand(obj.lx,obj.cw)-3;% Inicialização aleatória da matriz de pesos
             obj.w(1,:) = -1;
             end
+%             if iniw == 'aleat' 
+%             obj.w = 6*rand(obj.lx,obj.cw)-3;% Inicialização grade quadrada da matriz de pesos
+%             obj.w(1,:) = -1;
+%             end
+%             if iniw == 'aleat' 
+%             obj.w = 6*rand(obj.lx,obj.cw)-3;% Inicialização grade exagonal da matriz de pesos
+%             obj.w(1,:) = -1;
+%             end
             % Inicialiazação e Normalização dos vetores de pesos e de treinamento
              for xc = 1:obj.cx
                  obj.xin(:,xc) = obj.xi(:,xc)/norm(obj.xi(:,xc));
@@ -50,10 +58,9 @@ classdef ALG_SOM < handle
             grid
         end
         function treis(obj,txap,nep,r_gau)
-            obj.eta = txap; %Taxa de aprendizagem
+            obj.eta = txap; %Taxa de aprendizagem fixa
+%             obj.eta = txap; %Taxa de aprendizagem variável
             a=0;
-%             dist = [];
-%             mdist = [];
             ind = 0;
             epoca = 1;
             while a==0
@@ -75,7 +82,7 @@ classdef ALG_SOM < handle
                             somatww = somatww + (obj.wn(i,ind)-obj.wn(i,j))^2;
                         end
                         distr = sqrt(somatww);
-                        %dp = r_gau*exp-()
+                        %dp = r_gau*exp-()% Desvio padrão variavel
                         obj.gau = exp(-(distr^2/(2*(r_gau)^2)));
                         obj.wn(:,j) = obj.wn(:,j)+ obj.eta*obj.gau*(obj.xin(:,k)-obj.wn(:,j));
                     end
