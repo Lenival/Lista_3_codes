@@ -49,6 +49,10 @@ ab = [a' ; b']';
 %  hold on
 %  scatter(ab(52:102,1),ab(52:102,2),[],'g')
 
-redet = ALG_SOM(2,102,100,10,10);
-redet.nors(ab,1)
-redet.treis(0.1,1000,1);
+redet = ALG_SOM(2,102,1000);
+figure
+whitebg('k')
+redet.nors(ab,'aleat')
+figure
+whitebg('k')
+redet.treis(0.1,1000,0.1);
