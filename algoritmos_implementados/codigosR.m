@@ -23,12 +23,12 @@ a = [x1 ; y1]; % Espiral 1 [1,-1]
 b = [x2 ; y2]; % Espiral 2 [-1,1]
 ab = [a' ; b']';
 
-redet = ALG_COMPET(2,102,2);
+redet = ALG_COMPET(2,102,100);
 redet.nor(ab)
 figure
-[md w] = redet.trei(0.1,100);
+[md w] = redet.trei(0.1,5000);
 figure
-redet.valid(a2, w);
+redet.valid(ab, w);
 
 %% Teste do algoritmo SOM
 clear
