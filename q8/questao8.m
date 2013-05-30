@@ -3,9 +3,9 @@
 clear
 clc
 
-N = 200;
+N = 500;
 
-% Geracao dos dados
+%% Geracao dos dados
 
 r = 1;
 k = 0.01;
@@ -55,7 +55,7 @@ plot(real(-xvc),y,'g')
 pontos = 2*rand(2,N) - 1;
 %plot(pontos(1,:),pontos(2,:),'ok');
 
-% Classificacao
+%% Classificacao
 % [QX QY H V]
 classe = zeros(N,4);
 H = [];
@@ -76,3 +76,11 @@ classe = [QX; QY; H'; V'];
 
 R = H&V;
 plot(pontos(1,R),pontos(2,R),'ok');
+
+P = [pontos(1,R); pontos(2,R)];
+
+
+%% Treinamento
+net = newsom(P,[10 10]);
+net = train(net,P);
+plotsompos(net,P);
