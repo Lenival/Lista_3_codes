@@ -53,4 +53,26 @@ plot(real(xvc),y,'g')
 plot(real(-xvc),y,'g')
 
 pontos = 2*rand(2,N) - 1;
-plot(pontos(1,:),pontos(2,:),'ok');
+%plot(pontos(1,:),pontos(2,:),'ok');
+
+% Classificacao
+% [QX QY H V]
+classe = zeros(N,4);
+H = [];
+V = [];
+QX = [];
+QY = [];
+
+for i=1:size(pontos,2)
+    H = [H; (norm([pontos(1,i)-1 pontos(2,i)])<1)||(norm([pontos(1,i)+1 pontos(2,i)])<1)];
+end
+for i=1:size(pontos,2)
+    V = [V; (norm([pontos(1,i) pontos(2,i)-1])<1)||(norm([pontos(1,i) pontos(2,i)+1])<1)];
+end
+QX = [QX; (pontos(1,:)>0)];
+QY = [QY; (pontos(2,:)>0)];
+
+classe = [QX; QY; H'; V'];
+
+R = H&V;
+plot(pontos(1,R),pontos(2,R),'ok');
