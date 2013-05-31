@@ -30,6 +30,8 @@ Lista 3 Exerc\'icios
 
 RESOLU\c{C}\~AO: \\
 
+... \\
+
 \item Implemente a RBF considerando os algoritmos de treinamento para as tr\^{e}s situa\c{c}\~oes: (a) centros fixos e escolhidos aleatoriamente, (b) centros escolhidos atrav\'es da sele\c{c}\~ao auto-supervisionada (algoritmo K-means) , (c) centros escolhidos atrav\'es da sele\c{c}\~ao supervisionada, para as tr\^es quest\~oes abaixo: \\
 
 \begin{enumerate}[a)]
@@ -46,6 +48,10 @@ x_{2}
 \end{enumerate}
 
 RESOLU\c{C}\~AO: \\
+
+Segue o c\'odigo utilizando a \emph{toolbox} do MATLAB:
+
+\includepdf[pages=-]{q2.pdf}
 
 \item Considere o problema de classifica\c{c}\~ao de padr\~oes constitu\'ido neste caso de 12 padr\~oes. A distribui\c{c}\~ao dos padr\~oes tem como base um quadrado centrado no ponto (0.5,0.5) e lados iguais a 1. Os pontos (0.5,0.5), (1.0,0.5), (0.5,1.) e (0.0, 0.5) s\~ao centros de quatro semic\'irculos que se interceptam no interior do quadrado originando quatro classes e outras oito classes nas regi\~oes de n\~ao interse\c{c}\~ao. Ap\'os gerar aleatoriamente dados que venham formar estas distribui\c{c}\~oes de dados, selecione um conjunto de treinamento e um conjunto de valida\c{c}\~ao. Solucione o problema usando RBF, SVM e M\'aquina de Comit\^e. Verifique o desempenho do classificador usando o conjunto de valida\c{c}\~ao e calculando a matriz de confus\~ao e compare com o obtido na lista anterior usando MLP. \\
 
@@ -92,6 +98,43 @@ RESOLU\c{C}\~AO: \\
 \item Considere a distribui\c{c}\~ao dos padr\~oes que tem como base em um c\'irculo com raio igual a 0.25 centrado origem. Os pontos +1 e -1 de cada eixo s\~ao centros de quatro semic\'irculos que se interceptam no interior a as regi\~oes que excluem o c\'irculo de raio igual a 0.25 do quadrado originando quatro classes. Gere aleatoriamente os dados que venham formar estas distribui\c{c}\~oes de dados. Utilize a rede SOM de modo a quantizar atrav\'es da distribui\c{c}\~ao de neur\^onios a distribui\c{c}\~ao dos dados. \\
 
 RESOLU\c{C}\~AO: \\
+
+Foi feito a gera\c{c}\~ao dos dados atrav\'es da equa\c{c}\~ao do c\'irculo:
+
+\begin{equation*}
+x = \sqrt{r^{2} - (y - y_{0})^{2}} + x_{0}
+\end{equation*}
+
+\begin{equation*}
+y = \sqrt{r^{2} - (x - x_{0})^{2}} + y_{0}
+\end{equation*}
+
+A classifica\c{c}\~ao dos dados foi feito atrav\'es de um vetor $[QX QY H V]$, em que para cada ponto gerado $QX$ representa um dos dois quadrantes no eixo $X$, podendo assim assumir o valor $0$ ou $1$, o equivalente ocorre para $QY$ no eixo $Y$, $H$ representa se o ponto gerado encontra-se dentro de um semi-c\'irculo horizontal e $V$ para um semi-c\'irculo vertical. Com este vetor \'e poss\'ivel classificar o ponto gerado, visto que se o ponto estiver com valores de $H$ e $V$ iguais a $1$ significa que o ponto encontra-se dentro de dois semi-c\'irculos simultaneamente, ou seja, na regi\~ao de interesse. Os valores de $QX$ e $QY$ descrevem em quais das quatro regi\~oes os pontos se encontram.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{q8_1.png}
+\caption{Desenho das regioes de interesse.}
+\label{fig:q8_1}
+\end{figure}
+
+A rede foi treinada utilizando a \emph{toolbox} do MATLAB, com o m\'etodo $newsom$, com uma arquitetura 10x10 uniformimente distribuida. Com 500 pontos gerados e 200 itera\c{c}\~oes, tem-se:
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{q8_2.png}
+\caption{Resultado da rede.}
+\label{fig:q8_2}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{q8_3.png}
+\caption{Resultado da rede com as regioes.}
+\label{fig:q8_3}
+\end{figure}
+
+\newpage
 
 \item Pesquise e apresente o formalismo do algoritmo K-means por lote. \\ 
 
