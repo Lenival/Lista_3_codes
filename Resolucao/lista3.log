@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.4.8)  18 MAY 2013 17:30
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.4.8)  1 JUN 2013 20:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -345,68 +345,67 @@ e
 ))
 \AtBeginShipoutBox=\box31
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
+Underfull \hbox (badness 10000) in paragraph at lines 29--34
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
-
- []
-
-
-Overfull \hbox (1.15353pt too wide) in paragraph at lines 33--34
+Overfull \hbox (1.15353pt too wide) in paragraph at lines 35--36
 \OT1/cmr/m/n/12 tua^^Xc~oes: (a) cen-tros fi-xos e es-co-lhi-dos ale-a-to-ri-a-
 mente, (b) cen-tros es-co-lhi-dos atrav^^Ses
  []
 
 
-Overfull \hbox (1.41048pt too wide) in paragraph at lines 33--34
+Overfull \hbox (1.41048pt too wide) in paragraph at lines 35--36
 \OT1/cmr/m/n/12 da sele^^Xc~ao auto-supervisionada (al-go-ritmo K-means) , (c) 
 cen-tros es-co-lhi-dos atrav^^Ses
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 38.
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+LaTeX Font Info:    Try loading font information for U+msb on input line 38.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
  []
 
 [1
 
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+<q2.pdf, id=15, page=1, 597.23125pt x 845.1575pt>
+File: q2.pdf Graphic file (type pdf)
+ <use q2.pdf, page 1>
+Package pdftex.def Info: q2.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: q2.pdf Graphic file (type pdf)
 
- []
+<use q2.pdf, page 1>
+Package pdftex.def Info: q2.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q2.pdf Graphic file (type pdf)
+ <use q2.pdf, page 1>
+Package pdftex.def Info: q2.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q2.pdf Graphic file (type pdf)
+ <use q2.pdf, page 1>
+Package pdftex.def Info: q2.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q2.pdf Graphic file (type pdf)
 
-
+<use q2.pdf, page 1>
+Package pdftex.def Info: q2.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [2 <./q2.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
@@ -416,18 +415,105 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
+[3] <q3.pdf, id=30, page=1, 614.295pt x 794.97pt>
+File: q3.pdf Graphic file (type pdf)
+ <use q3.pdf, page 1>
+Package pdftex.def Info: q3.pdf, page1 used on input line 64.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: q3.pdf Graphic file (type pdf)
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+<use q3.pdf, page 1>
+Package pdftex.def Info: q3.pdf, page1 used on input line 64.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: q3.pdf Graphic file (type pdf)
+ <use q3.pdf, page 1>
+Package pdftex.def Info: q3.pdf, page1 used on input line 64.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: q3.pdf Graphic file (type pdf)
+ <use q3.pdf, page 1>
+Package pdftex.def Info: q3.pdf, page1 used on input line 64.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: q3.pdf Graphic file (type pdf)
+
+<use q3.pdf, page 1>
+Package pdftex.def Info: q3.pdf, page1 used on input line 64.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [4 <./q3.pdf>]
+<q3.pdf, id=40, page=2, 614.295pt x 794.97pt>
+File: q3.pdf Graphic file (type pdf)
+ <use q3.pdf, page 2>
+Package pdftex.def Info: q3.pdf, page2 used on input line 64.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: q3.pdf Graphic file (type pdf)
+
+<use q3.pdf, page 2>
+Package pdftex.def Info: q3.pdf, page2 used on input line 64.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: q3.pdf Graphic file (type pdf)
+ <use q3.pdf, page 2>
+Package pdftex.def Info: q3.pdf, page2 used on input line 64.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [5 <./q3.pdf>]
+<q3.pdf, id=46, page=3, 614.295pt x 794.97pt>
+File: q3.pdf Graphic file (type pdf)
+ <use q3.pdf, page 3>
+Package pdftex.def Info: q3.pdf, page3 used on input line 64.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: q3.pdf Graphic file (type pdf)
+
+<use q3.pdf, page 3>
+Package pdftex.def Info: q3.pdf, page3 used on input line 64.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: q3.pdf Graphic file (type pdf)
+ <use q3.pdf, page 3>
+Package pdftex.def Info: q3.pdf, page3 used on input line 64.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [6 <./q3.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
+[7] <q4.pdf, id=62, page=1, 597.23125pt x 845.1575pt>
+File: q4.pdf Graphic file (type pdf)
+ <use q4.pdf, page 1>
+Package pdftex.def Info: q4.pdf, page1 used on input line 72.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: q4.pdf Graphic file (type pdf)
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
+<use q4.pdf, page 1>
+Package pdftex.def Info: q4.pdf, page1 used on input line 72.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q4.pdf Graphic file (type pdf)
+ <use q4.pdf, page 1>
+Package pdftex.def Info: q4.pdf, page1 used on input line 72.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q4.pdf Graphic file (type pdf)
+ <use q4.pdf, page 1>
+Package pdftex.def Info: q4.pdf, page1 used on input line 72.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q4.pdf Graphic file (type pdf)
+
+<use q4.pdf, page 1>
+Package pdftex.def Info: q4.pdf, page1 used on input line 72.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [8 <./q4.pdf>] <q4_1.png, id=72, 594.22pt x 184.69pt>
+File: q4_1.png Graphic file (type png)
+
+<use q4_1.png>
+Package pdftex.def Info: q4_1.png used on input line 76.
+(pdftex.def)             Requested size: 345.9871pt x 107.54016pt.
+ <q4_2.png, id=73, 562.1pt x 421.575pt>
+File: q4_2.png Graphic file (type png)
+ <use q4_2.png>
+Package pdftex.def Info: q4_2.png used on input line 83.
+(pdftex.def)             Requested size: 345.9871pt x 259.489pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
@@ -436,82 +522,411 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
+[9 <./q4_1.png> <./q4_2.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
+[10] <q6_1.pdf, id=83, page=1, 597.23125pt x 845.1575pt>
+File: q6_1.pdf Graphic file (type pdf)
+
+<use q6_1.pdf, page 1>
+Package pdftex.def Info: q6_1.pdf, page1 used on input line 162.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: q6_1.pdf Graphic file (type pdf)
+ <use q6_1.pdf, page 1>
+Package pdftex.def Info: q6_1.pdf, page1 used on input line 162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q6_1.pdf Graphic file (type pdf)
+ <use q6_1.pdf, page 1>
+Package pdftex.def Info: q6_1.pdf, page1 used on input line 162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q6_1.pdf Graphic file (type pdf)
+
+<use q6_1.pdf, page 1>
+Package pdftex.def Info: q6_1.pdf, page1 used on input line 162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q6_1.pdf Graphic file (type pdf)
+ <use q6_1.pdf, page 1>
+Package pdftex.def Info: q6_1.pdf, page1 used on input line 162.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [11 <./q6_1.pdf>]
+<q6_2.pdf, id=95, page=1, 597.23125pt x 845.1575pt>
+File: q6_2.pdf Graphic file (type pdf)
+ <use q6_2.pdf, page 1>
+Package pdftex.def Info: q6_2.pdf, page1 used on input line 164.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: q6_2.pdf Graphic file (type pdf)
+
+<use q6_2.pdf, page 1>
+Package pdftex.def Info: q6_2.pdf, page1 used on input line 164.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q6_2.pdf Graphic file (type pdf)
+ <use q6_2.pdf, page 1>
+Package pdftex.def Info: q6_2.pdf, page1 used on input line 164.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q6_2.pdf Graphic file (type pdf)
+ <use q6_2.pdf, page 1>
+Package pdftex.def Info: q6_2.pdf, page1 used on input line 164.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q6_2.pdf Graphic file (type pdf)
+
+<use q6_2.pdf, page 1>
+Package pdftex.def Info: q6_2.pdf, page1 used on input line 164.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [12 <./q6_2.pdf>]
+<q6.png, id=105, 421.575pt x 316.18124pt>
+File: q6.png Graphic file (type png)
+ <use q6.png>
+Package pdftex.def Info: q6.png used on input line 168.
+(pdftex.def)             Requested size: 345.9871pt x 259.49704pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ∫ in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ∫ in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ∫ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--188
+
+ []
+
+<q7_1.png, id=106, 554.07pt x 260.47313pt>
+File: q7_1.png Graphic file (type png)
+ <use q7_1.png>
+Package pdftex.def Info: q7_1.png used on input line 193.
+(pdftex.def)             Requested size: 345.9871pt x 162.65222pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13 <./q6.png (PNG copy)>] <q7_2.png, id=112, 502.87875pt x 347.04657pt>
+File: q7_2.png Graphic file (type png)
+
+<use q7_2.png>
+Package pdftex.def Info: q7_2.png used on input line 203.
+(pdftex.def)             Requested size: 345.9871pt x 238.76868pt.
+ [14 <./q7_1.png> <./q7_2.png>]
+<q7_1.pdf, id=120, page=1, 597.23125pt x 845.1575pt>
+File: q7_1.pdf Graphic file (type pdf)
+ <use q7_1.pdf, page 1>
+Package pdftex.def Info: q7_1.pdf, page1 used on input line 208.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: q7_1.pdf Graphic file (type pdf)
+
+<use q7_1.pdf, page 1>
+Package pdftex.def Info: q7_1.pdf, page1 used on input line 208.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_1.pdf Graphic file (type pdf)
+ <use q7_1.pdf, page 1>
+Package pdftex.def Info: q7_1.pdf, page1 used on input line 208.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_1.pdf Graphic file (type pdf)
+ <use q7_1.pdf, page 1>
+Package pdftex.def Info: q7_1.pdf, page1 used on input line 208.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_1.pdf Graphic file (type pdf)
+
+<use q7_1.pdf, page 1>
+Package pdftex.def Info: q7_1.pdf, page1 used on input line 208.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [15 <./q7_1.pdf>]
+<q7_1.pdf, id=130, page=2, 597.23125pt x 845.1575pt>
+File: q7_1.pdf Graphic file (type pdf)
+ <use q7_1.pdf, page 2>
+Package pdftex.def Info: q7_1.pdf, page2 used on input line 208.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_1.pdf Graphic file (type pdf)
+
+<use q7_1.pdf, page 2>
+Package pdftex.def Info: q7_1.pdf, page2 used on input line 208.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_1.pdf Graphic file (type pdf)
+ <use q7_1.pdf, page 2>
+Package pdftex.def Info: q7_1.pdf, page2 used on input line 208.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [16 <./q7_1.pdf>]
+<q7_1.pdf, id=134, page=3, 597.23125pt x 845.1575pt>
+File: q7_1.pdf Graphic file (type pdf)
+ <use q7_1.pdf, page 3>
+Package pdftex.def Info: q7_1.pdf, page3 used on input line 208.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_1.pdf Graphic file (type pdf)
+
+<use q7_1.pdf, page 3>
+Package pdftex.def Info: q7_1.pdf, page3 used on input line 208.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_1.pdf Graphic file (type pdf)
+ <use q7_1.pdf, page 3>
+Package pdftex.def Info: q7_1.pdf, page3 used on input line 208.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [17 <./q7_1.pdf>]
+<q7_2.pdf, id=140, page=1, 597.23125pt x 845.1575pt>
+File: q7_2.pdf Graphic file (type pdf)
+ <use q7_2.pdf, page 1>
+Package pdftex.def Info: q7_2.pdf, page1 used on input line 210.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: q7_2.pdf Graphic file (type pdf)
+
+<use q7_2.pdf, page 1>
+Package pdftex.def Info: q7_2.pdf, page1 used on input line 210.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_2.pdf Graphic file (type pdf)
+ <use q7_2.pdf, page 1>
+Package pdftex.def Info: q7_2.pdf, page1 used on input line 210.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_2.pdf Graphic file (type pdf)
+ <use q7_2.pdf, page 1>
+Package pdftex.def Info: q7_2.pdf, page1 used on input line 210.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_2.pdf Graphic file (type pdf)
+
+<use q7_2.pdf, page 1>
+Package pdftex.def Info: q7_2.pdf, page1 used on input line 210.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [18 <./q7_2.pdf>]
+<q7_2.pdf, id=150, page=2, 597.23125pt x 845.1575pt>
+File: q7_2.pdf Graphic file (type pdf)
+ <use q7_2.pdf, page 2>
+Package pdftex.def Info: q7_2.pdf, page2 used on input line 210.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_2.pdf Graphic file (type pdf)
+
+<use q7_2.pdf, page 2>
+Package pdftex.def Info: q7_2.pdf, page2 used on input line 210.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_2.pdf Graphic file (type pdf)
+ <use q7_2.pdf, page 2>
+Package pdftex.def Info: q7_2.pdf, page2 used on input line 210.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [19 <./q7_2.pdf>]
+<q7_2.pdf, id=155, page=3, 597.23125pt x 845.1575pt>
+File: q7_2.pdf Graphic file (type pdf)
+ <use q7_2.pdf, page 3>
+Package pdftex.def Info: q7_2.pdf, page3 used on input line 210.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_2.pdf Graphic file (type pdf)
+
+<use q7_2.pdf, page 3>
+Package pdftex.def Info: q7_2.pdf, page3 used on input line 210.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: q7_2.pdf Graphic file (type pdf)
+ <use q7_2.pdf, page 3>
+Package pdftex.def Info: q7_2.pdf, page3 used on input line 210.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [20 <./q7_2.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
+<q8_1.png, id=159, 562.1pt x 421.575pt>
+File: q8_1.png Graphic file (type png)
+ <use q8_1.png>
+Package pdftex.def Info: q8_1.png used on input line 230.
+(pdftex.def)             Requested size: 345.9871pt x 259.489pt.
+
+<q8_2.png, id=160, 562.1pt x 421.575pt>
+File: q8_2.png Graphic file (type png)
+ <use q8_2.png>
+Package pdftex.def Info: q8_2.png used on input line 239.
+(pdftex.def)             Requested size: 345.9871pt x 259.489pt.
+
+<q8_3.png, id=161, 562.1pt x 421.575pt>
+File: q8_3.png Graphic file (type png)
+ <use q8_3.png>
+Package pdftex.def Info: q8_3.png used on input line 246.
+(pdftex.def)             Requested size: 345.9871pt x 259.489pt.
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ∫ in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ∫ in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ∫ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--258
+
+ []
+
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ≠ in font cmr12!
+<q8_4.png, id=162, 422.32782pt x 316.93407pt>
+File: q8_4.png Graphic file (type png)
+ <use q8_4.png>
+Package pdftex.def Info: q8_4.png used on input line 264.
+(pdftex.def)             Requested size: 345.9871pt x 259.65065pt.
+
+<q8_5.png, id=163, 422.32782pt x 316.93407pt>
+File: q8_5.png Graphic file (type png)
+ <use q8_5.png>
+Package pdftex.def Info: q8_5.png used on input line 273.
+(pdftex.def)             Requested size: 345.9871pt x 259.65065pt.
+ [21] [22 <./q8_1.png (PNG copy)> <./q8_2.png (PNG copy)>] [23 <./q8_3.png (PNG
+ copy)> <./q8_4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Overfull \hbox (3.69934pt too wide) in paragraph at lines 288--289
+[]\OT1/cmr/m/n/12 Os al-go-rit-mos de par-ti-ci-o-na-mento vi-sam sub-di-vi-dir
+ os da-dos de en-trada em n^^Sumeros
+ []
+
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+[24 <./q8_5.png>]
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ß in font cmr12!
+Missing character: There is no À in font cmr12!
+Missing character: There is no Ü in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ß in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no £ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--340
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 341--345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
 
  []
 
-[4] [5] (./lista3.aux) ) 
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
+
+ []
+
+<f_1.png, id=192, 1371.1225pt x 770.88pt>
+File: f_1.png Graphic file (type png)
+ <use f_1.png>
+Package pdftex.def Info: f_1.png used on input line 391.
+(pdftex.def)             Requested size: 345.9871pt x 155.76244pt.
+
+<f_2.png, id=194, 1371.1225pt x 770.88pt>
+File: f_2.png Graphic file (type png)
+ <use f_2.png>
+Package pdftex.def Info: f_2.png used on input line 398.
+(pdftex.def)             Requested size: 432.48224pt x 194.70108pt.
+ [28 <./f_1.png> <./f_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 407--411
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--417
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--421
+
+ []
+
+[29] (./lista3.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4468 strings out of 493481
- 63935 string characters out of 3140966
- 138927 words of memory out of 3000000
- 7698 multiletter control sequences out of 15000+200000
- 8592 words of font info for 33 fonts, out of 3000000 for 9000
+ 4605 strings out of 493481
+ 65580 string characters out of 3140966
+ 139054 words of memory out of 3000000
+ 7809 multiletter control sequences out of 15000+200000
+ 8939 words of font info for 34 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,7n,24p,852b,300s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb>
-Output written on lista3.pdf (5 pages, 82742 bytes).
+ 40i,18n,46p,943b,529s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
+l/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
+exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texl
+ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
+e/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on lista3.pdf (29 pages, 723668 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 244 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 208 words of extra memory for PDF output out of 10000 (max. 10000000)
 
